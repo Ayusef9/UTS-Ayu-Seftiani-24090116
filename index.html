@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - UTS Web</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <!-- Left Side - Illustration -->
+        <div class="login-illustration">
+            <img src="img/images (1).png"Login Illustration">
+        </div>
+
+        <!-- Right Side - Login Form -->
+        <div class="login-form-container">
+            <div class="login-form">
+                <h1>Welcome Back!</h1>
+                
+                <form id="loginForm">
+                    <div class="input-group">
+                        <span class="input-icon">@</span>
+                        <input type="email" id="email" placeholder="Email Address" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <span class="input-icon">🔒</span>
+                        <input type="password" id="password" placeholder="Password" required>
+                    </div>
+                    
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    
+                    <div id="errorMessage" class="error-message"></div>
+                    
+                    <button type="submit" class="btn-login">Login</button>
+                </form>
+                
+                <div class="divider">
+                    <span>Or</span>
+                </div>
+                
+                <div class="social-login">
+                    <button class="btn-social btn-google">
+                        <span class="social-icon">G</span>
+                        Google
+                    </button>
+                    <button class="btn-social btn-facebook">
+                        <span class="social-icon">f</span>
+                        Facebook
+                    </button>
+                </div>
+                
+                <div class="signup-link">
+                    Don't have an account? <a href="#">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
