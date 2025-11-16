@@ -27,9 +27,9 @@ if (loginForm) {
             return;
         }
         
-        // Validasi NIM (10 digit angka)
-        if (!/^\d{10}$/.test(nim)) {
-            errorMessage.textContent = 'NIM harus 10 digit angka!';
+        // Validasi NIM 
+        if (!/^\d{8}$/.test(nim)) {
+            errorMessage.textContent = 'NIM harus 8 angka!';
             errorMessage.style.display = 'block';
             return;
         }
