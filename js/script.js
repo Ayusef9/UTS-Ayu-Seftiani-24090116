@@ -5,21 +5,41 @@ if (loginForm) {
         e.preventDefault();
         
         const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value.trim();
+        const nim = document.getElementById('nim').value.trim();
         const errorMessage = document.getElementById('errorMessage');
         
         // Reset error message
         errorMessage.textContent = '';
         errorMessage.style.display = 'none';
         
-        // Validasi input
-        if (!email || !password) {
-            errorMessage.textContent = 'Email dan Password tidak boleh kosong!';
+        // Validasi input kosong
+        if (!email || !nim) {
+            errorMessage.textContent = 'Email dan NIM tidak boleh kosong!';
             errorMessage.style.display = 'block';
             return;
         }
         
-        // Login berhasil
+        // Validasi format email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            errorMessage.textContent = 'Format email tidak valid!';
+            errorMessage.style.display = 'block';
+            return;
+        }
+        
+        // Validasi NIM (10 digit angka)
+        if (!/^\d{10}$/.test(nim)) {
+            errorMessage.textContent = 'NIM harus 10 digit angka!';
+            errorMessage.style.display = 'block';
+            return;
+        }
+        
+        
+        // Simpan session
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('userEmail', email);
+        localStorage.setItem('userNIM', nim);
+        
         alert('Login berhasil!');
         window.location.href = 'dashboard.html';
     });
